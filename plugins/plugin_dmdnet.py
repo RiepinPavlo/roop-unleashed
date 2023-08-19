@@ -176,7 +176,7 @@ def create(devicename):
     test = "cuda" if torch.cuda.is_available() else "cpu"
     device = torch.device(devicename)
     oDMDNet = DMDNet().to(device)
-    weights = torch.load('./models/DMDNet.pth') 
+    weights = torch.load('./models/DMDNet.pth', test) 
     oDMDNet.load_state_dict(weights, strict=True)
 
     oDMDNet.eval()
